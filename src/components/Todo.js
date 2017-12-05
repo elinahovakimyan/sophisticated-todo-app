@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { deleteTodo } from '../actions'
 import Delete from 'react-icons/lib/fa/close'
-import '../Style.css'
 
 class Todo extends Component {
 	handleDeleteClick(id) {

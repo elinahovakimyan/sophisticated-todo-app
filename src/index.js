@@ -5,7 +5,7 @@ import enUS from 'antd/lib/locale-provider/en_US'
 import { Provider } from 'react-redux'
 import store from './store'
 import App from './App'
-import './Style.css'
+import './css/styles.css'
 
 render(
 	<LocaleProvider locale={enUS}>

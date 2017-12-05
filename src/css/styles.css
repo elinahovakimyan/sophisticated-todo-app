@@ -5,8 +5,8 @@
 
 html,
 body {
-/*  background-image: url('src/img/dreams.jpg');
-  background-size: cover;*/
+  /*background-image: url('../img/dreams.jpg');*/
+  /*background-size: cover;*/
   font-family: 'Caveat Brush', cursive;
   font-size: 18px !important;
 }
@@ -31,9 +31,21 @@ h1 {
   margin: 0 auto;
   display: block;
   text-align: center;
-
 }
 
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    /* For Desktops: */
+    .todoStyle {
+      margin: 0 20%;
+    }
+}
 
 .header {
   text-align: center;

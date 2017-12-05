@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import Todo from './Todo'
-import '../Style.css'
 import { connect } from 'react-redux'
 import { toggleTodo } from '../actions'
 import { Row, Col } from 'antd'
