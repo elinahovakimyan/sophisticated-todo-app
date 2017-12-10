@@ -21,6 +21,8 @@ class Todo extends Component {
 			 		{this.props.title}
 				</h3>
 				<p> {this.props.description} </p>
+				<p> At {this.props.location} </p>
+
 				<span onClick={() => this.handleDeleteClick(id)}>
 					<Delete />
 				</span>

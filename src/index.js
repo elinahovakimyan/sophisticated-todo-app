@@ -7,6 +7,8 @@ import store from './store'
 import App from './App'
 import './css/styles.css'
 
+import './firebase';
+
 render(
 	<LocaleProvider locale={enUS}>
 		<Provider store={store}>

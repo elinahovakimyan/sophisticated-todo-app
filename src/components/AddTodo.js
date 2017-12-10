@@ -3,7 +3,6 @@ import store from '../store'
 import { addTodo } from '../actions'
 import { Form, Icon, Input, Button, Modal, Select } from 'antd';
 
-
 const dispatch = store.dispatch;
 const Option = Select.Option;
 const TextArea = Input.TextArea;
@@ -29,7 +28,8 @@ class ModalForm extends Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        dispatch(addTodo(values))
+        dispatch(addTodo(values));
+        console.log(store.getState())
         this.handleCancel();
         this.props.form.resetFields();
       }
@@ -41,10 +41,6 @@ class ModalForm extends Component {
       visible: true,
     });
   }
-  
-  onChangetitle = (e) => {
-    this.setState({ title: e.target.value });
-  }
 
   render() {
     const { getFieldDecorator } = this.props.form;
@@ -52,17 +48,19 @@ class ModalForm extends Component {
 
     return (
         <div>
-          <Button type="primary" icon="plus" onClick={this.showModal} size="large" className="modalBtn">
+          <Button type="primary" 
+                  icon="plus" 
+                  onClick={this.showModal} 
+                  size="large" 
+                  className="modalBtn">
             Add a "TO-DO"
           </Button>
           <Modal
             visible={visible}
-            title="Title"
+            title="Add your todo"
             onSubmit={this.handleSubmit}
             onCancel={this.handleCancel}
-            footer={[
-              <Button key="back" size="large" onClick={this.handleCancel}>Close</Button>,
-            ]}
+            footer={[]}
           >
             <Form onSubmit={this.handleSubmit}
                   className="add-form">
@@ -74,6 +72,7 @@ class ModalForm extends Component {
                   <Select
                     showSearch
                     style={{ width: 250 }}
+                    prefix={<Icon type="rocket" />}
                     placeholder="Select the type of your to-do"
                     optionFilterProp="children"
                     filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
@@ -89,11 +88,20 @@ class ModalForm extends Component {
                   <Input
                         placeholder="Enter the title"
                         prefix={<Icon type="rocket" />}
-                        onChange={this.onChangetitle}
                         ref={node => this.titleInput = node}
                   />
                 )}
               </FormItem>
+              <FormItem>
+                {getFieldDecorator('address')(
+                  <Input
+                        placeholder="Location"
+                        prefix={<Icon type="environment-o" />}
+                        ref={node => this.address = node}
+                  />
+                )}
+              </FormItem>
+
               <FormItem>
                 <label> Description </label>
                 {getFieldDecorator('description')(
@@ -116,4 +124,4 @@ class ModalForm extends Component {
 
 const AddTodo = Form.create()(ModalForm);
 
-export default AddTodo
+export default AddTodo;

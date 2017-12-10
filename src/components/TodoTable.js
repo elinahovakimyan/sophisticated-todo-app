@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Table } from 'antd'
 import { connect } from 'react-redux'
+import { v4 } from 'node-uuid';
 
 class TodoTableSheet extends Component {
     state = {
@@ -36,16 +37,16 @@ class TodoTableSheet extends Component {
     }, {
       title: 'Title',
       dataIndex: 'title',
-      key: 'title',
+      key: v4(),
     }, {
       title: 'Description',
       dataIndex: 'description',
-      key: 'description',
+      key: v4(),
     }];
 
     return (
       <div>
-        <Table columns={columns} dataSource={this.props.todos} onChange={this.handleChange} className="tableList" />
+        <Table columns={columns} dataSource={this.props.todos} className="tableList" />
       </div>
     );
   }
@@ -74,4 +75,4 @@ const TodoTable = connect(
   mapStateToProps
 )(TodoTableSheet)
 
-export default TodoTable
+export default TodoTable;

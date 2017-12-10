@@ -4,40 +4,47 @@ import { connect } from 'react-redux'
 import { toggleTodo } from '../actions'
 import { Row, Col } from 'antd'
 
-const TodoList = ({todos, onTodoClick}) => (
-	<Row>
-		<Col span={8}>
-			<div className="listDiv">
-				<h3> Work Todos </h3>
-				{todos.filter(function({theType}) {
-				    return theType == 'work'
-				}).map(todo => (
-			    	<Todo key={todo.id} {...todo} onClick={() => onTodoClick(todo.id)} />
-			    ))}
-			</div>
-		</Col>
-		<Col span={8}>
-			<div className="listDiv">
-				<h3> Study Todos </h3>
-				{todos.filter(function({theType}) {
-				    return theType == 'study'
-				}).map(todo => (
-			    	<Todo key={todo.id} {...todo} onClick={() => onTodoClick(todo.id)} />
-			    ))}
-			</div>
-		</Col>
-		<Col span={8}>
-			<div className="listDiv">
-				<h3> Family Todos </h3>
-				{todos.filter(function({theType}) {
-				    return theType == 'family'
-				}).map(todo => (
-			    	<Todo key={todo.id} {...todo} onClick={() => onTodoClick(todo.id)} />
-			    ))}
-			</div>
-		</Col>
-	</Row>		
-)
+const TodoList = ({todos, onTodoClick}) => {
+
+	return(
+
+		<Row>
+			<Col span={8}>
+				<div className="listDiv">
+					<h3> Work Todos </h3>
+					{todos.filter(function({theType}) {
+					    return theType === 'work'
+					}).map(todo => (
+				    	<Todo key={todo.id} {...todo} 	
+				    		  onClick={() => onTodoClick(todo.id)} />
+				    ))}
+				</div>
+			</Col>
+			<Col span={8}>
+				<div className="listDiv">
+					<h3> Study Todos </h3>
+					{todos.filter(function({theType}) {
+					    return theType === 'study'
+					}).map(todo => (
+				    	<Todo key={todo.id} {...todo} 	
+				    		  onClick={() => onTodoClick(todo.id)} />
+				    ))}
+				</div>
+			</Col>
+			<Col span={8}>
+				<div className="listDiv">
+					<h3> Family Todos </h3>
+					{todos.filter(function({theType}) {
+					    return theType === 'family'
+					}).map(todo => (
+				    	<Todo key={todo.id} {...todo} onClick={() => onTodoClick(todo.id)} />
+				    ))}
+				</div>
+			</Col>
+		</Row>		
+	)
+}
+
 
 const getVisibleTodos = (todos, filter) => {
 	switch (filter) {
@@ -71,4 +78,4 @@ const VisibleTodoList = connect(
 	mapDispatchToProps
 )(TodoList)
 
-export default VisibleTodoList
+export default VisibleTodoList;

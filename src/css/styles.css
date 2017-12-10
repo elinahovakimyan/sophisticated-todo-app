@@ -1,20 +1,28 @@
 @import '~antd/dist/antd.css';
 @import url('https://fonts.googleapis.com/css?family=Kranky');
-@import url('https://fonts.googleapis.com/css?family=Caveat+Brush');
-
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
 html,
 body {
   /*background-image: url('../img/dreams.jpg');*/
   /*background-size: cover;*/
-  font-family: 'Caveat Brush', cursive;
+  background-color: #C0C0B0;
+  font-family: 'Lato', sans-serif;
   font-size: 18px !important;
 }
 
-h1 {
-  color: #0d85aa !important;
+* {
+  margin: auto;
+}
+
+.heading {
+  padding-top: 15px;
+  background-color: #731509;
+  width: 100%;
+  height: 120px;
+  color: #FAFBF7 !important;
   text-align: center;
-  font-size: 50px;
+  font-size: 40px;
   font-family: 'Kranky', cursive;
 }
 
@@ -24,7 +32,19 @@ h1 {
 }
 
 .modalBtn {
-  margin: 20px;
+  font-size: 20px !important;
+  padding: 15px 15px 35px 15px;
+  border: none;
+  background-color: #468263;
+  margin: 40px;
+  color: #FAFBF7;
+
+}
+
+
+.modalBtn:hover {
+  background-color: #5AB89F;
+  
 }
 
 .todoStyle {
@@ -43,7 +63,7 @@ h1 {
 @media only screen and (min-width: 768px) {
     /* For Desktops: */
     .todoStyle {
-      margin: 0 20%;
+      margin: 0;
     }
 }
 
@@ -61,7 +81,7 @@ h1 {
 
 .listDiv {
   top: 100px;
-  background: #e3ebf7;
+  background: #C19469;
   border: 1.3px solid #b7c0cc;
   border-radius: 6px; 
   display: inline-block;
@@ -71,7 +91,7 @@ h1 {
 }
 
 .todo {
-  background: #f7faff;
+  background: #FAFBF7;
   border: 1px solid #a9b1bc;
   margin: 8px 3px;
   padding: 5px;
@@ -92,8 +112,9 @@ h1 {
   
 }
 
-.filterTag button:hover {
-  background-color: #def4fc;
+.filterTag button:hover, .filterTag button:focus, .filterTag button:active {
+  border-color: #468263;
+  color: #468263;
 }
 
 button {
@@ -110,4 +131,8 @@ table {
 
 .ant-tabs-tab {
   font-size: 16px !important; 
+}
+
+table:hover {
+  background-color: red;
 }

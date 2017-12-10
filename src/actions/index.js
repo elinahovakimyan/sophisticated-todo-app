@@ -1,12 +1,13 @@
-let nextId = 0;
+import { v4 } from 'node-uuid';
 
 export const addTodo = (values) => {
 	return {
 		type: 'ADD_TODO',
-		id: nextId++,
+		id: v4(),
 		title: values.title,
 		description: values.description,
-		theType: values.theType
+		theType: values.theType,
+		location: values.address 
 	}
 }
 

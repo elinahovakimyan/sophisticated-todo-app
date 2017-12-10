@@ -5,6 +5,7 @@ import Header from './components/Header'
 import VisibleTodoList from './components/VisibleTodoList'
 import TodoTable from './components/TodoTable'
 import { Tabs } from 'antd';
+
 const TabPane = Tabs.TabPane;
 
 const App = () => (
@@ -18,10 +19,10 @@ const App = () => (
 		    </TabPane>
 		    <TabPane tab="Table" key="2">
 		    	<h2> Todos' List :)  </h2>
-		    	<TodoTable/>
+		    	<TodoTable />
 		    </TabPane>
-		</Tabs>			
+		</Tabs>
 	</div>
 )
 
-export default App
+export default App;
