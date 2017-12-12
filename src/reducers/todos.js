@@ -9,6 +9,7 @@ const todos = (state = [], action) => {
 					description: action.description,
 					deadline: action.deadline,
 					theType: action.theType,
+					loc: action.loc,
 					completed: false
 				}
 			]

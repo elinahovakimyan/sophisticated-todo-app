@@ -37,11 +37,11 @@ class TodoTableSheet extends Component {
     }, {
       title: 'Title',
       dataIndex: 'title',
-      key: v4(),
+      key: 'title',
     }, {
       title: 'Description',
       dataIndex: 'description',
-      key: v4(),
+      key: 'description',
     }];
 
     return (

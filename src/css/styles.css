@@ -11,8 +11,10 @@ body {
   font-size: 18px !important;
 }
 
-* {
-  margin: auto;
+h1 {
+  opacity: 1;
+  color: #fff;
+  padding: 10px;
 }
 
 .heading {
@@ -38,13 +40,10 @@ body {
   background-color: #468263;
   margin: 40px;
   color: #FAFBF7;
-
 }
-
 
 .modalBtn:hover {
   background-color: #5AB89F;
-  
 }
 
 .todoStyle {
@@ -73,16 +72,9 @@ body {
   background: rgba(122, 136, 160, 0.5)
 }
 
-h1 {
-  opacity: 1;
-  color: #fff;
-  padding: 10px;
-}
-
 .listDiv {
   top: 100px;
   background: #C19469;
-  border: 1.3px solid #b7c0cc;
   border-radius: 6px; 
   display: inline-block;
   padding: 10px 15px;
@@ -129,10 +121,14 @@ table {
   font-size: 16px !important;
 }
 
-.ant-tabs-tab {
-  font-size: 16px !important; 
+tr:hover, tr:focus {
+  background-color: red;
 }
 
-table:hover {
-  background-color: red;
+․ant-tabs-tab-active {
+  background-color: #731509 !important;
+}
+
+․ant-tabs-tab {
+  background:  #FAFBF7 !important;
 }

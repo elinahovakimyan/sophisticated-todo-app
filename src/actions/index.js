@@ -7,7 +7,7 @@ export const addTodo = (values) => {
 		title: values.title,
 		description: values.description,
 		theType: values.theType,
-		location: values.address 
+		loc: values.loc 
 	}
 }
 

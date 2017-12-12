@@ -1,7 +1,10 @@
-import React, {Component} from 'react'
-import store from '../store'
-import { addTodo } from '../actions'
+import React, {Component} from 'react';
+import store from '../store';
+import { addTodo } from '../actions';
 import { Form, Icon, Input, Button, Modal, Select } from 'antd';
+import ColView from 'react-icons/lib/fa/columns';
+import TableView from 'react-icons/lib/fa/list';
+import { Link } from 'react-router-dom';
 
 const dispatch = store.dispatch;
 const Option = Select.Option;
@@ -29,7 +32,6 @@ class ModalForm extends Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         dispatch(addTodo(values));
-        console.log(store.getState())
         this.handleCancel();
         this.props.form.resetFields();
       }
@@ -55,6 +57,13 @@ class ModalForm extends Component {
                   className="modalBtn">
             Add a "TO-DO"
           </Button>
+
+          <Link to="/tableView">
+            <ColView/>
+          </Link>
+          <TableView/>
+
+
           <Modal
             visible={visible}
             title="Add your todo"
@@ -93,7 +102,7 @@ class ModalForm extends Component {
                 )}
               </FormItem>
               <FormItem>
-                {getFieldDecorator('address')(
+                {getFieldDecorator('loc')(
                   <Input
                         placeholder="Location"
                         prefix={<Icon type="environment-o" />}
