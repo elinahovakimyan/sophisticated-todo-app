@@ -59,11 +59,13 @@ h1 {
     }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 968px) {
     /* For Desktops: */
-    .todoStyle {
-      margin: 0;
+    .todo-column {
+      margin: 10px 200px;
     }
+
+
 }
 
 .header {

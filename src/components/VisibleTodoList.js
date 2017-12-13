@@ -7,7 +7,7 @@ import { Row, Col } from 'antd'
 const TodoList = ({todos, onTodoClick}) => {
 
 	return(
-		<Row>
+		<Row className="todo-column">
 			<Col span={8}>
 				<div className="listDiv">
 					<h3> Work Todos </h3>

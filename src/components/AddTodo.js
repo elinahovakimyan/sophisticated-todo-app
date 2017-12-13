@@ -58,11 +58,16 @@ class ModalForm extends Component {
             Add a "TO-DO"
           </Button>
 
-          <Link to="/tableView">
-            <ColView/>
+          <Link to="/">
+            <span className="nav-item">
+              <ColView/>  
+            </span>
           </Link>
-          <TableView/>
-
+          <Link to="/table">
+            <span className="nav-item">
+              <TableView/>
+            </span>
+          </Link>
 
           <Modal
             visible={visible}
