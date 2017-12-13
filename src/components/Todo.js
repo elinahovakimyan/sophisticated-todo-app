@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { deleteTodo } from '../actions'
 import Delete from 'react-icons/lib/fa/close'
 import { Icon, Modal, Button } from 'antd'
+import { canvasFunction } from './LavEliiii'
 
 class Todo extends Component {
 	constructor(props) {
@@ -46,6 +47,11 @@ class Todo extends Component {
 		});
 	}
 
+	handleDoing() {
+		canvasFunction();
+		this.props.onClick;
+	}
+
 
 	render() {
 		const {id} = this.props;
@@ -63,7 +69,7 @@ class Todo extends Component {
 				 }}>
 
 				 <div className="todoText"
-				 	  onClick={this.props.onClick}>
+				 	  onClick={this.handleDoing}>
 
 					<h3>{this.props.title}</h3>
 					<p>{this.props.description}</p>
