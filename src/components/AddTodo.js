@@ -11,6 +11,7 @@ const Option = Select.Option;
 const TextArea = Input.TextArea;
 const FormItem = Form.Item;
 const ButtonGroup = Button.Group;
+import { canvasFunction } from './LavEliiii'
 
 class ModalForm extends Component {
   constructor(props) {
@@ -36,6 +37,12 @@ class ModalForm extends Component {
         this.props.form.resetFields();
       }
     });
+    const canvas = document.getElementById("winter");
+    canvas.style.display = "block";
+    canvasFunction();
+    setTimeout(function() {
+      canvas.style.display = "none";
+    }, 6000);
   }
 
   showModal = () => {

@@ -18,6 +18,8 @@ const App = () => (
 	        <Route component={NotFound} />
         </Switch>
 
+        <Footer/>
+
 	</div>
 )
 
