@@ -3,9 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 html,
-body {
-  /*background-image: url('../img/dreams.jpg');*/
-  /*background-size: cover;*/
+body { 
   background-color: #C0C0B0;
   font-family: 'Lato', sans-serif;
   font-size: 18px !important;
@@ -17,20 +15,18 @@ h1 {
   padding: 10px;
 }
 
-* {
+/** {
   z-index: -1;
   position: relative;
-}
-
+}*/
 
 #winter {
-    display: none;
-    position: absolute;
-    z-index: 1;
-    border: 1px solid red;
-    background-color: transparent;
-    height: 800px;
-    
+  display: none;
+  position: absolute;
+  z-index: 1;
+  border: 1px solid red;
+  background-color: transparent;
+  height: 800px;
 }
 
 .heading {
@@ -70,7 +66,7 @@ h1 {
 }
 
 @media only screen and (max-width: 768px) {
-    /* For mobile phones: */
+     For mobile phones: 
     [class*="col-"] {
         width: 100%;
     }
@@ -152,13 +148,4 @@ tr:hover, tr:focus {
 ․ant-tabs-tab {
   background:  #FAFBF7 !important;
 }
-
-
-
-
-
-
-
-
-
 

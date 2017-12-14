@@ -45,9 +45,11 @@ export const canvasFunction = () => {
     };
 
     for(let i = 0; i < snowflakes.length; i++) {
-        
+
         setInterval(function() {
-            snowflakes[i].xdelta = Math.sign(- snowflakes[i].xdelta) * rand(3);
+            if(snowflakes[i]) {
+                snowflakes[i].xdelta = Math.sign(-1 * snowflakes[i].xdelta) * rand(3);
+            } 
         },rand(500)+700);
         
     };
@@ -64,7 +66,7 @@ export const canvasFunction = () => {
             
             snowflakes.splice(snowflakes.indexOf(snowflake), 1);
             
-            console.log(snowflakes);
+            // console.log(snowflakes);
            
         };
         
@@ -79,9 +81,7 @@ export const canvasFunction = () => {
         forEach(snowflakes, update);
         
         if(snowflakes.length === 0) {end = true;};
-        
-        //console.log("ha!");
-        
+                
         if(!end) {
             requestAnimationFrame(gameLoop);
         }

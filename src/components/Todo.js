@@ -4,6 +4,9 @@ import { deleteTodo } from '../actions'
 import Delete from 'react-icons/lib/fa/close'
 import { Icon, Modal, Button } from 'antd'
 import { canvasFunction } from './LavEliiii'
+import ReactTimeout from 'react-timeout'
+
+// onClick={() => onTodoClick(todo.id)}
 
 class Todo extends Component {
 	constructor(props) {
@@ -16,6 +19,7 @@ class Todo extends Component {
 		this.handleMouseOut = this.handleMouseOut.bind(this);
 		this.showModal = this.showModal.bind(this);
 		this.handleCancel = this.handleCancel.bind(this);
+		this.handleDoing = this.handleDoing.bind(this);
 	}
 
 	handleDeleteClick(id) {
@@ -34,7 +38,6 @@ class Todo extends Component {
 		});
 	}
 
-
 	showModal() {
 		this.setState({
 			visible: true,
@@ -48,8 +51,13 @@ class Todo extends Component {
 	}
 
 	handleDoing() {
+		
+		const canvas = document.getElementById("winter");
+		canvas.style.display = "block";
 		canvasFunction();
-		this.props.onClick;
+		this.props.setTimeout(
+			// canvas.style.display = "none";
+			this.props.doClick, 6000)
 	}
 
 
@@ -69,16 +77,17 @@ class Todo extends Component {
 				 }}>
 
 				 <div className="todoText"
-				 	  onClick={this.handleDoing}>
+				 	  onClick={this.props.doClick}>
 
 					<h3>{this.props.title}</h3>
 					<p>{this.props.description}</p>
 					{this.props.loc &&
 					<p> <i>At</i> {this.props.loc} </p>}
+
 				</div>
 
 				<span onClick={this.showModal}>
-					<Icon type="delete" />
+					<Icon type="delete" onClick={this.showModal}/>
 				</span>
 
 				<Modal
