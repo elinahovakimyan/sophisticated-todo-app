@@ -46,7 +46,7 @@ class TodoTableSheet extends Component {
 
     return (
       <div>
-        <Table columns={columns} dataSource={this.props.todos} className="tableList" />
+        <Table columns={columns} dataSource={this.props.todos} onChange={this.handleChange} className="tableList" />
       </div>
     );
   }
