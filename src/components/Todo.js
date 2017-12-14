@@ -55,9 +55,10 @@ class Todo extends Component {
 		const canvas = document.getElementById("winter");
 		canvas.style.display = "block";
 		canvasFunction();
-		this.props.setTimeout(
-			// canvas.style.display = "none";
-			this.props.doClick, 6000)
+		setTimeout(function() {
+			canvas.style.display = "none";
+			this.props.onClick()
+		}, 6000)
 	}
 
 
@@ -77,7 +78,7 @@ class Todo extends Component {
 				 }}>
 
 				 <div className="todoText"
-				 	  onClick={this.props.doClick}>
+				 	  onClick={this.handleDoing}>
 
 					<h3>{this.props.title}</h3>
 					<p>{this.props.description}</p>

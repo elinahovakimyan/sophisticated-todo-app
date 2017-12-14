@@ -14,7 +14,7 @@ const TodoList = ({todos, onTodoClick}) => {
 					{todos.filter(function({theType}) {
 					    return theType === 'work'
 					}).map(todo => (
-				    	<Todo key={todo.id} {...todo} doClick={() => onTodoClick(todo.id)} />
+				    	<Todo key={todo.id} {...todo} onClick={() => onTodoClick(todo.id)} />
 				    ))}
 				</div>
 			</Col>
@@ -24,7 +24,7 @@ const TodoList = ({todos, onTodoClick}) => {
 					{todos.filter(function({theType}) {
 					    return theType === 'study'
 					}).map(todo => (
-				    	<Todo key={todo.id} {...todo} doClick={() => onTodoClick(todo.id)} />
+				    	<Todo key={todo.id} {...todo} onClick={() => onTodoClick(todo.id)} />
 				    ))}
 				</div>
 			</Col>
@@ -34,7 +34,7 @@ const TodoList = ({todos, onTodoClick}) => {
 					{todos.filter(function({theType}) {
 					    return theType === 'family'
 					}).map(todo => (
-				    	<Todo key={todo.id} {...todo} doClick={() => onTodoClick(todo.id)} />
+				    	<Todo key={todo.id} {...todo} onClick={() => onTodoClick(todo.id)} />
 				    ))}
 				</div>
 			</Col>
