@@ -62,7 +62,7 @@ export const canvasFunction = () => {
         
         snowflake.y += snowflake.ydelta;
         
-        if(snowflake.y > window.innerHeight + 40) {
+        if(snowflake.y > window.innerHeight) {
             
             snowflakes.splice(snowflakes.indexOf(snowflake), 1);
             
@@ -74,13 +74,20 @@ export const canvasFunction = () => {
         
     };
 
+    document.addEventListener("click", function() {
+
+        canvas.style.display = "none";
+
+    }, true);
+
     const gameLoop = function() {
         
         c.clearRect(0, 0, window.innerWidth, window.innerHeight);
         
         forEach(snowflakes, update);
         
-        if(snowflakes.length === 0) {end = true;};
+        if(snowflakes.length === 0) {end = true;
+        canvas.style.display = "none";};
                 
         if(!end) {
             requestAnimationFrame(gameLoop);
@@ -90,4 +97,17 @@ export const canvasFunction = () => {
 
     gameLoop();
 
+
 }
+
+
+
+
+
+
+
+
+
+
+
+

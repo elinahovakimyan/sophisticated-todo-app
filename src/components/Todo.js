@@ -55,10 +55,11 @@ class Todo extends Component {
 		const canvas = document.getElementById("winter");
 		canvas.style.display = "block";
 		canvasFunction();
-		setTimeout(function() {
-			canvas.style.display = "none";
-			this.props.onClick()
-		}, 6000)
+		// setTimeout(function() {
+		// 	canvas.style.display = "none";
+		// 	//this.props.onClick()
+		// }, 6000);
+
 	}
 
 

@@ -59,12 +59,12 @@ class ModalForm extends Component {
           </Button>
 
           <Link to="/">
-            <span className="nav-item">
+            <span className="nav-item" id="colView">
               <ColView/>  
             </span>
           </Link>
           <Link to="/table">
-            <span className="nav-item">
+            <span className="nav-item" id="tableView">
               <TableView/>
             </span>
           </Link>

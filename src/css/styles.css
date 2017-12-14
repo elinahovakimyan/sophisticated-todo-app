@@ -149,3 +149,19 @@ tr:hover, tr:focus {
   background:  #FAFBF7 !important;
 }
 
+#colView, #tableView {
+  color: #FAFBF7;
+  width: 40px !important;
+  height: 40px !important;
+  margin: 15px;
+
+}
+
+
+
+
+
+
+
+
+
