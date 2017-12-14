@@ -47,11 +47,11 @@ h1 {
 
 .modalBtn {
   font-size: 20px !important;
-  padding: 15px 15px 35px 15px;
+  padding: 15px 15px 40px 15px;
   border: none;
   background-color: #468263;
   margin: 40px;
-  margin-bottom: 0;
+  margin-bottom: 25px;
   color: #FAFBF7;
 }
 
@@ -151,9 +151,14 @@ tr:hover, tr:focus {
 
 #colView, #tableView {
   color: #FAFBF7;
-  width: 40px !important;
-  height: 40px !important;
   margin: 15px;
+  font-size: 25px;
+
+}
+
+#colView {
+
+  margin-left: 0 !important;
 
 }
 

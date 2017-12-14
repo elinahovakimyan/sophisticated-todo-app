@@ -40,9 +40,6 @@ class ModalForm extends Component {
     const canvas = document.getElementById("winter");
     canvas.style.display = "block";
     canvasFunction();
-    setTimeout(function() {
-      canvas.style.display = "none";
-    }, 6000);
   }
 
   showModal = () => {
