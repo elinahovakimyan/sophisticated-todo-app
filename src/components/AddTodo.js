@@ -6,7 +6,6 @@ import ColView from 'react-icons/lib/fa/columns';
 import TableView from 'react-icons/lib/fa/list';
 import { Link } from 'react-router-dom';
 import { canvasFunction } from './SnowFlakes';
-import SpeechRecognition from 'react-speech-recognition';
 
 const dispatch = store.dispatch;
 const Option = Select.Option;
@@ -52,11 +51,6 @@ class ModalForm extends Component {
   render() {
     const { getFieldDecorator } = this.props.form;
     const { page, visible } = this.state;
-    const { transcript, resetTranscript, browserSupportsSpeechRecognition, startListening, stopListening } = this.props
-
-    if (!browserSupportsSpeechRecognition) {
-      return null;
-    }
 
     return (
         <div>
