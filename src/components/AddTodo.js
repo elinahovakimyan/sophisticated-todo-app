@@ -5,8 +5,8 @@ import { Form, Icon, Input, Button, Modal, Select } from 'antd';
 import ColView from 'react-icons/lib/fa/columns';
 import TableView from 'react-icons/lib/fa/list';
 import { Link } from 'react-router-dom';
-import { canvasFunction } from './SnowFlakes'
-import SpeechRecognition from 'react-speech-recognition'
+import { canvasFunction } from './SnowFlakes';
+import SpeechRecognition from 'react-speech-recognition';
 
 const dispatch = store.dispatch;
 const Option = Select.Option;
@@ -60,25 +60,29 @@ class ModalForm extends Component {
 
     return (
         <div>
-          <Button type="primary" 
-                  icon="plus" 
-                  onClick={this.showModal} 
-                  size="large" 
-                  className="modalBtn">
-            Add a "TO-DO"
-          </Button>
 
+          <div>
+            <Link to="/table">
+              <span className="nav-item" id="tableView">
+                <TableView/>
+              </span>
+            </Link>
+            <Link to="/">
+              <span className="nav-item left-nav" id="colView">
+                <ColView/>  
+              </span>
+            </Link>
+          </div>
 
-          <Link to="/table">
-            <span className="nav-item" id="tableView">
-              <TableView/>
-            </span>
-          </Link>
-          <Link to="/">
-            <span className="nav-item left-nav" id="colView">
-              <ColView/>  
-            </span>
-          </Link>
+          <div className="btn-center">
+            <Button type="primary" 
+                    icon="plus" 
+                    onClick={this.showModal} 
+                    size="large" 
+                    className="modalBtn">
+              Add a "TO-DO"
+            </Button>
+          </div>
           
 
           <Modal
@@ -110,20 +114,12 @@ class ModalForm extends Component {
                 )}
               </FormItem>
               <FormItem>
-                {getFieldDecorator('title', {
-                  rules: [{ required: true, message: 'Please enter a title' }]
-                })(
-                <span>
+                {getFieldDecorator('title')(
                   <Input
                         placeholder="Enter the title"
                         prefix={<Icon type="rocket" />}
                         ref={node => this.titleInput = node}
                   />
-                  <span className="record-icons" >
-                    <Icon type="notification" className="record-icon" onClick={startListening}/>                  
-                    <Icon type="close" className="record-icon" onClick={stopListening} />
-                  </span>
-                </span>
                 )}
               </FormItem>
               <FormItem>

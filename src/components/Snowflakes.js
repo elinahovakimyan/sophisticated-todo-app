@@ -20,7 +20,7 @@ export const canvasFunction = () => {
     const c = canvas.getContext("2d");
 
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const height = canvas.height = document.getElementsByTagName("body")[0].scrollHeight;
 
 
     const snowflakeImg = new Image();
@@ -62,7 +62,7 @@ export const canvasFunction = () => {
         
         snowflake.y += snowflake.ydelta;
         
-        if(snowflake.y > window.innerHeight) {
+        if(snowflake.y > height) {
             
             snowflakes.splice(snowflakes.indexOf(snowflake), 1);
             
@@ -82,7 +82,7 @@ export const canvasFunction = () => {
 
     const gameLoop = function() {
         
-        c.clearRect(0, 0, window.innerWidth, window.innerHeight);
+        c.clearRect(0, 0, window.innerWidth, height);
         
         forEach(snowflakes, update);
         

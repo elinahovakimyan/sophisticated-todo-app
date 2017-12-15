@@ -15,6 +15,6 @@ export const saveState = todos => {
         const todosListStorage = JSON.stringify(todos)
         localStorage.setItem('todosList', todosListStorage);
     } catch (err) {
-        // new Error(err);
+        new Error(err);
     }
 }
