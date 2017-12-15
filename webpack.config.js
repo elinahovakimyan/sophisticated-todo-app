@@ -1,5 +1,4 @@
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-var CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
     entry: "./src/index.js",
@@ -45,9 +44,6 @@ module.exports = {
             cssProcessor: require('cssnano'),
             cssProcessorOptions: {discardComments: {removeAll: true}},
             canPrint: true
-        }),
-        new CopyWebpackPlugin([
-            { from: 'src/img', to: 'img' }
-        ])
+        })    
     ]
 }
