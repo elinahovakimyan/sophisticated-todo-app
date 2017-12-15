@@ -67,7 +67,7 @@ class Todo extends Component {
 
 					<h3>{this.props.title}</h3>
 					<p>{this.props.description}</p>
-					{this.props.loc &&
+					{!!this.props.loc &&
 					<p> <i>At</i> {this.props.loc} </p>}
 
 				</div>
