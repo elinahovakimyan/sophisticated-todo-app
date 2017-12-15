@@ -3,10 +3,7 @@ import { connect } from 'react-redux'
 import { deleteTodo } from '../actions'
 import Delete from 'react-icons/lib/fa/close'
 import { Icon, Modal, Button } from 'antd'
-import { canvasFunction } from './LavEliiii'
 import ReactTimeout from 'react-timeout'
-
-// onClick={() => onTodoClick(todo.id)}
 
 class Todo extends Component {
 	constructor(props) {
@@ -19,7 +16,6 @@ class Todo extends Component {
 		this.handleMouseOut = this.handleMouseOut.bind(this);
 		this.showModal = this.showModal.bind(this);
 		this.handleCancel = this.handleCancel.bind(this);
-		this.handleDoing = this.handleDoing.bind(this);
 	}
 
 	handleDeleteClick(id) {
@@ -50,13 +46,6 @@ class Todo extends Component {
 		});
 	}
 
-	handleDoing() {
-		const canvas = document.getElementById("winter");
-		canvas.style.display = "block";
-		canvasFunction();
-
-	}
-
 
 	render() {
 		const {id} = this.props;
@@ -72,8 +61,6 @@ class Todo extends Component {
 					background: 
 					this.state.mouseIn ? '#ECE0D3' : '#FAFBF7'
 				 }}>
-
-				 {!!this.props.completed && this.handleDoing}
 
 				 <div className="todoText"
 				 	  onClick={this.props.onClick}>

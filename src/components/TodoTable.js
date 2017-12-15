@@ -9,7 +9,7 @@ class TodoTableSheet extends Component {
       sortedInfo: null,
     };
 
-  handleChange = (pagination, filters, sorter) => {
+  handleChange = (filters, sorter) => {
     this.setState({
       filteredInfo: filters,
       sortedInfo: sorter,

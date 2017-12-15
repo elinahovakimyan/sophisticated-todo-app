@@ -5,13 +5,14 @@ import { Form, Icon, Input, Button, Modal, Select } from 'antd';
 import ColView from 'react-icons/lib/fa/columns';
 import TableView from 'react-icons/lib/fa/list';
 import { Link } from 'react-router-dom';
+import { canvasFunction } from './SnowFlakes'
+import SpeechRecognition from 'react-speech-recognition'
 
 const dispatch = store.dispatch;
 const Option = Select.Option;
 const TextArea = Input.TextArea;
 const FormItem = Form.Item;
 const ButtonGroup = Button.Group;
-import { canvasFunction } from './LavEliiii'
 
 class ModalForm extends Component {
   constructor(props) {
@@ -51,6 +52,11 @@ class ModalForm extends Component {
   render() {
     const { getFieldDecorator } = this.props.form;
     const { page, visible } = this.state;
+    const { transcript, resetTranscript, browserSupportsSpeechRecognition, startListening, stopListening } = this.props
+
+    if (!browserSupportsSpeechRecognition) {
+      return null;
+    }
 
     return (
         <div>
@@ -62,16 +68,18 @@ class ModalForm extends Component {
             Add a "TO-DO"
           </Button>
 
-          <Link to="/">
-            <span className="nav-item" id="colView">
-              <ColView/>  
-            </span>
-          </Link>
+
           <Link to="/table">
             <span className="nav-item" id="tableView">
               <TableView/>
             </span>
           </Link>
+          <Link to="/">
+            <span className="nav-item left-nav" id="colView">
+              <ColView/>  
+            </span>
+          </Link>
+          
 
           <Modal
             visible={visible}
@@ -102,12 +110,20 @@ class ModalForm extends Component {
                 )}
               </FormItem>
               <FormItem>
-                {getFieldDecorator('title')(
+                {getFieldDecorator('title', {
+                  rules: [{ required: true, message: 'Please enter a title' }]
+                })(
+                <span>
                   <Input
                         placeholder="Enter the title"
                         prefix={<Icon type="rocket" />}
                         ref={node => this.titleInput = node}
                   />
+                  <span className="record-icons" >
+                    <Icon type="notification" className="record-icon" onClick={startListening}/>                  
+                    <Icon type="close" className="record-icon" onClick={stopListening} />
+                  </span>
+                </span>
                 )}
               </FormItem>
               <FormItem>
@@ -128,8 +144,8 @@ class ModalForm extends Component {
               </FormItem>
               <FormItem>
                 <Button type="primary" 
-                    htmlType="submit" 
-                    className="add-form-button">
+                        htmlType="submit" 
+                        className="add-form-button">
                   Add <Icon type="plus" />
                 </Button>
               </FormItem>
@@ -140,6 +156,10 @@ class ModalForm extends Component {
   }
 }
 
+const options = {
+  autoStart: false
+}
+
 const AddTodo = Form.create()(ModalForm);
 
-export default AddTodo;
+export default SpeechRecognition(options)(AddTodo);
