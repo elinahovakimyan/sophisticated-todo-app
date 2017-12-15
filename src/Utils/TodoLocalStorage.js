@@ -8,7 +8,7 @@ export const loadState = () => {
     } catch (err) {
         return undefined;
     }
-}
+};
 
 export const saveState = todos => {
     try {
@@ -17,4 +17,4 @@ export const saveState = todos => {
     } catch (err) {
         new Error(err);
     }
-}
+};

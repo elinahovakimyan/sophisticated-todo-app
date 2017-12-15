@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Button } from 'antd';
 import { connect } from 'react-redux';
 import { setVisibilityFilter } from '../actions';
@@ -19,12 +18,6 @@ const Link = ({ active, children, onClick }) => {
 			{children}
 		</Button>
 	)
-}
-
-Link.propTypes = {
-	active: PropTypes.bool.isRequired,
-	children: PropTypes.node.isRequired,
-	onClick: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state, ownProps) => {

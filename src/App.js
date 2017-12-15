@@ -19,7 +19,6 @@ const App = () => (
         </Switch>
 
         <Footer/>
-
 	</div>
 )
 

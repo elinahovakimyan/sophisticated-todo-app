@@ -17,4 +17,4 @@ render(
 		</Provider>
 	</LocaleProvider>,
   	document.getElementById('root')
-)
+);

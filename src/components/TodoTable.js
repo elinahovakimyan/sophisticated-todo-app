@@ -1,7 +1,6 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { Table } from 'antd'
 import { connect } from 'react-redux'
-import { v4 } from 'node-uuid';
 
 class TodoTableSheet extends Component {
     state = {

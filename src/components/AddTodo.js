@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import store from '../store';
 import { addTodo } from '../actions';
 import { Form, Icon, Input, Button, Modal, Select } from 'antd';
@@ -25,7 +25,9 @@ class ModalForm extends Component {
   }
 
   handleCancel = () => {
-    this.setState({ visible: false });
+    this.setState({ 
+      visible: false 
+    });
   }
 
   handleSubmit = (e) => {
@@ -143,8 +145,8 @@ class ModalForm extends Component {
           </Modal>
         </div>
     );
-  }
-}
+  };
+};
 
 const options = {
   autoStart: false
