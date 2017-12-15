@@ -152,4 +152,4 @@ const options = {
 
 const AddTodo = Form.create()(ModalForm);
 
-export default SpeechRecognition(options)(AddTodo);
+export default AddTodo;
