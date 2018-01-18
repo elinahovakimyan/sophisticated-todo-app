@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Todo from './Todo'
 import { connect } from 'react-redux'
-import { toggleTodo } from '../actions'
+import { toggleTodo } from '../../actions'
 import { Row, Col } from 'antd'
 
 const TodoList = ({todos, onTodoClick}) => {
@@ -38,7 +38,7 @@ const TodoList = ({todos, onTodoClick}) => {
 				    ))}
 				</div>
 			</Col>
-		</Row>		
+		</Row>
 	)
 }
 

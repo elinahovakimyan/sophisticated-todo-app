@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import store from '../store';
-import { addTodo } from '../actions';
+import store from '../../store';
+import { addTodo } from '../../actions';
+import Nav from './Nav';
 import { Form, Icon, Input, Button, Modal, Select } from 'antd';
-import ColView from 'react-icons/lib/fa/columns';
-import TableView from 'react-icons/lib/fa/list';
-import { Link } from 'react-router-dom';
-import { canvasFunction } from './SnowFlakes';
+import { canvasFunction } from '../SnowFlakes';
 
 const dispatch = store.dispatch;
 const Option = Select.Option;
@@ -21,12 +19,12 @@ class ModalForm extends Component {
       visible: false,
       confirmDirty: false,
       autoCompleteResult: []
-    } 
+    }
   }
 
   handleCancel = () => {
-    this.setState({ 
-      visible: false 
+    this.setState({
+      visible: false
     });
   }
 
@@ -55,31 +53,14 @@ class ModalForm extends Component {
     const { page, visible } = this.state;
 
     return (
-        <div>
-
-          <div>
-            <Link to="/table">
-              <span className="nav-item" id="tableView">
-                <TableView/>
-              </span>
-            </Link>
-            <Link to="/">
-              <span className="nav-item left-nav" id="colView">
-                <ColView/>  
-              </span>
-            </Link>
-          </div>
-
-          <div className="btn-center">
-            <Button type="primary" 
-                    icon="plus" 
-                    onClick={this.showModal} 
-                    size="large" 
-                    className="modalBtn">
+        <div className="button-center">
+          <Button type="primary"
+                  icon="plus"
+                  onClick={this.showModal}
+                  size="large"
+                  className="modalBtn">
               Add a "TO-DO"
-            </Button>
-          </div>
-          
+          </Button>
 
           <Modal
             visible={visible}
@@ -135,8 +116,8 @@ class ModalForm extends Component {
                 )}
               </FormItem>
               <FormItem>
-                <Button type="primary" 
-                        htmlType="submit" 
+                <Button type="primary"
+                        htmlType="submit"
                         className="add-form-button">
                   Add <Icon type="plus" />
                 </Button>

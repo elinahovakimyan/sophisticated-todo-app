@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { deleteTodo } from '../actions'
+import { deleteTodo } from '../../actions'
 import Delete from 'react-icons/lib/fa/close'
 import { Icon, Modal, Button } from 'antd'
 import ReactTimeout from 'react-timeout'
@@ -41,8 +41,8 @@ class Todo extends Component {
 	}
 
 	handleCancel() {
-		this.setState({ 
-			visible: false 
+		this.setState({
+			visible: false
 		});
 	}
 
@@ -56,9 +56,9 @@ class Todo extends Component {
 				 onMouseOut={this.handleMouseOut}
 				 ref={elem => this.todoSq = elem}
 				 style={{
-					textDecoration: 
+					textDecoration:
 					this.props.completed ? 'line-through' : 'none',
-					background: 
+					background:
 					this.state.mouseIn ? '#ECE0D3' : '#FAFBF7'
 				 }}>
 
@@ -87,7 +87,7 @@ class Todo extends Component {
 					</Button>
 
 					<Button onClick={this.handleCancel}>
-						O no, please keep it 
+						O no, please keep it
 					</Button>
 				</Modal>
 			</div>

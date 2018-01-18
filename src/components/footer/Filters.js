@@ -1,7 +1,7 @@
 import React from 'react'
 import FilterLink from './FilterLink'
 
-const Footer = () => (
+const Filters = () => (
 	<p className="footer">
 		<span className="filterTag">
 			<FilterLink filter="SHOW_ALL">
@@ -21,4 +21,4 @@ const Footer = () => (
 	</p>
 )
 
-export default Footer;
+export default Filters;

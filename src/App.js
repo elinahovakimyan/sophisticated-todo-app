@@ -1,25 +1,20 @@
-import React from 'react'
-import Footer from './components/Footer'
-import AddTodo from './components/AddTodo'
-import Header from './components/Header'
-import VisibleTodoList from './components/VisibleTodoList'
-import TodoTable from './components/TodoTable'
-import NotFound from './NotFound'
-import { Route, Switch } from 'react-router';
+const Server = require('./server.js')
+const port = (process.env.PORT || 8080)
+const app = Server.app()
 
-const App = () => (
-	<div className="todoStyle">
-		<Header />
-		<AddTodo />
-		
-		<Switch>
-			<Route exact path="/" component={VisibleTodoList} />
-	        <Route path="/table" component={TodoTable} />
-	        <Route component={NotFound} />
-        </Switch>
+if (process.env.NODE_ENV !== 'production') {
+  const webpack = require('webpack')
+  const webpackDevMiddleware = require('webpack-dev-middleware')
+  const webpackHotMiddleware = require('webpack-hot-middleware')
+  const config = require('../webpack.dev.config.js')
+  const compiler = webpack(config)
 
-        <Footer/>
-	</div>
-)
+  app.use(webpackHotMiddleware(compiler))
+  app.use(webpackDevMiddleware(compiler, {
+    noInfo: true,
+    publicPath: config.output.publicPath
+  }))
+}
 
-export default App;
+app.listen(port)
+console.log(`Listening at http://localhost:${port}`)
