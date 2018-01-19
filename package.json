@@ -11,6 +11,7 @@
     "react",
     "redux"
   ],
+  "author": "Elina Hovakimyan",
   "license": "MIT",
   "dependencies": {
     "antd": "^2.13.4",
