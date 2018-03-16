@@ -3,7 +3,7 @@ import store from '../../store';
 import { addTodo } from '../../actions';
 import Nav from './Nav';
 import { Form, Icon, Input, Button, Modal, Select } from 'antd';
-import { canvasFunction } from '../SnowFlakes';
+// import { canvasFunction } from '../SnowFlakes';
 
 const dispatch = store.dispatch;
 const Option = Select.Option;
@@ -37,9 +37,9 @@ class ModalForm extends Component {
         this.props.form.resetFields();
       }
     });
-    const canvas = document.getElementById("winter");
-    canvas.style.display = "block";
-    canvasFunction();
+    // const canvas = document.getElementById("winter");
+    // canvas.style.display = "block";
+    // canvasFunction();
   }
 
   showModal = () => {
